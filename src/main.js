@@ -2,12 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import { baqendConnect, default as reducer } from './modules/application'
+import { injectReducer } from './store/reducers'
 
 // ========================================================
 // Store Instantiation
 // ========================================================
 const initialState = window.___INITIAL_STATE__
 const store = createStore(initialState)
+injectReducer(store, { key: 'application', reducer })
+store.dispatch(baqendConnect())
 
 // ========================================================
 // Render Setup

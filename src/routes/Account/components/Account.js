@@ -8,7 +8,11 @@ export const Account = (props) => (
   <div>
     { props.isLoggedIn
       ? <AccountOverview user={props.user} logout={props.logout} />
-      : <AccountForm submitLogin={props.submitLogin} submitRegister={props.submitRegister} inputChange={props.inputChange} />
+      : <AccountForm
+        submitLogin={props.submitLogin}
+        submitRegister={props.submitRegister}
+        inputChange={props.inputChange}
+        />
     }
   </div>
 )

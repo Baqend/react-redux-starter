@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const AccountForm = (props) => (
-  <form onSubmit={props.submit} onChange={props.inputChange}>
+  <form onChange={props.inputChange}>
     <div>
       <label htmlFor='username'>Username </label>
       <input type='text' name='username' defaultValue='' />
@@ -11,13 +11,15 @@ export const AccountForm = (props) => (
       <input type='password' name='password' defaultValue='' />
     </div>
     <div>
-      <button type='submit'>Login</button>
+      <button onClick={props.submitLogin}>Login</button>
+      <button onClick={props.submitRegister}>Register</button>
     </div>
   </form>
 )
 
 AccountForm.propTypes = {
-  submit: React.PropTypes.func.isRequired,
+  submitLogin: React.PropTypes.func.isRequired,
+  submitRegister: React.PropTypes.func.isRequired,
   inputChange: React.PropTypes.func.isRequired
 }
 

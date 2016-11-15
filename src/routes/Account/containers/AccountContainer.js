@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 
 import Account from '../components/Account'
-import { inputChange, submit, logoutButton } from '../modules/account'
+import { inputChange, submitLogin, submitRegister, logoutButton } from '../modules/account'
 
 const mapDispatchToProps = {
-  submit,
+  submitLogin,
+  submitRegister,
   inputChange,
   logout: () => logoutButton()
 }

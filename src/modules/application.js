@@ -44,6 +44,22 @@ export function login (form, redirect) {
   }
 }
 
+export function register (form, redirect) {
+  const { username, password } = form
+  return dispatch => {
+    // simulate request
+    db.User.register(username, password)
+      .then((user) => {
+        dispatch({
+          type: LOGGED_IN,
+          user
+        })
+        // Can be used to navigate to a new route
+        if (redirect) redirect()
+      })
+  }
+}
+
 export function logout () {
   return dispatch => {
     db.User.logout()

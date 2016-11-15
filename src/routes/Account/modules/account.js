@@ -1,4 +1,4 @@
-import { login, logout } from '../../../modules/application'
+import { login, logout, register } from '../../../modules/application'
 
 // ------------------------------------
 // Constants
@@ -8,10 +8,17 @@ export const INPUT_CHANGE = 'INPUT_CHANGE'
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const submit = (event) => {
+export const submitLogin = (event) => {
   event.preventDefault()
   return (dispatch, getState) => {
     dispatch(login(getState().account))
+  }
+}
+
+export const submitRegister = (event) => {
+  event.preventDefault()
+  return (dispatch, getState) => {
+    dispatch(register(getState().account))
   }
 }
 

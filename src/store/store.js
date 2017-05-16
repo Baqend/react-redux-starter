@@ -1,27 +1,23 @@
-import { applyMiddleware, compose, createStore, combineReducers } from 'redux'
+import { applyMiddleware, combineReducers } from 'redux'
 
-import { baqendReducer, baqendMiddleware, baqendConnect } from 'redux-baqend'
+import { createStoreWithBaqend, baqendReducer } from 'redux-baqend'
 import middlewares from '../middleware'
 import reducers from '../reducers'
 
-export default (initialState = {}) => {
+import { db } from 'baqend/lib/baqend'
 
+export default (initialState = {}) => {
   const reducer = combineReducers({
     baqend: baqendReducer,
     ...reducers
   })
-
   const middleware = applyMiddleware(
-    baqendMiddleware,
     ...middlewares
   )
-
-  const enhancers = compose(
-    baqendConnect,
+  return createStoreWithBaqend(
+    db.connect('app-starter'),
+    reducer,
+    initialState,
     middleware
   )
-
-  const store = createStore(reducer, initialState, enhancers)
-
-  return store
 }

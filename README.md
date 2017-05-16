@@ -36,11 +36,6 @@ Before the Baqend SDK can be used, a connection to the Baqend instance must be e
 React works best when using serializable data structures, therefore it's recommended to convert your db objects into json objects before passing them to you redux store and update your objects from json, when you want to change them. You can either do it manually or let the middleware do it for you. The middleware will wait for your app to be connected before making the requests and dispatching your actions and pass the current db instance to your action methods. All the communication with your Baqend instance is made within your defined redux actions.
 
 ```js
-const store = createStore()
-store.connect('app-starter')
-```
-
-```js
 return {
   'BAQEND': {
     type: MESSAGES_LOAD,

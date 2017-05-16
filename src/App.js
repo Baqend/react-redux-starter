@@ -12,7 +12,6 @@ import Messages from './components/Messages/Messages'
 import Account from './components/Account/Account'
 
 const store = createStore()
-store.connect('app-starter')
 
 class App extends Component {
   render() {

@@ -1,0 +1,14 @@
+.messages {
+  padding: 16px;
+}
+
+.message-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 30px;
+  border-radius: 50%;
+}

@@ -21,7 +21,7 @@ To develop your own application
 1. Launch a free Baqend instance at [baqend.com](http://dashboard.baqend.com/register)
 2. Change the app name in your projects `src/App.js` connect method from `app-starter` to your app name
 3. Your React app will automatically connect to your app instance
-4. To access your data or backend features it´s recommended to use the [redux-baqend-middleware](http://github.com) within your redux actions
+4. To access your data or backend features it´s recommended to use the [redux-baqend-middleware](https://github.com/Baqend/redux-baqend) within your redux actions
 5. You can also simply import the `db`-object with `import {db} from 'baqend'`
 and see our [Guide](http://www.baqend.com/guide/#accessing-data) and [API Docs](http://www.baqend.com/js-sdk/latest/baqend.html) for details
 
@@ -31,7 +31,7 @@ For more information: on [React](https://facebook.github.io/react/docs/hello-wor
 
 ## How the Baqend integration into React works
 
-Before the Baqend SDK can be used, a connection to the Baqend instance must be established. This can be easily done by adding the `baqendConnect` enhancer and the `baqendMiddleware` from [redux-baqend-middleware](http://github.com) to your store und use the connect method on your store object after creating it. You can find an example in `src/store/store.js` and `src/App.js`.
+Before the Baqend SDK can be used, a connection to the Baqend instance must be established. This can be easily done by adding the `baqendConnect` enhancer and the `baqendMiddleware` from [redux-baqend-middleware](https://github.com/Baqend/redux-baqend) to your store und use the connect method on your store object after creating it. You can find an example in `src/store/store.js` and `src/App.js`.
 
 React works best when using serializable data structures, therefore it's recommended to convert your db objects into json objects before passing them to you redux store and update your objects from json, when you want to change them. You can either do it manually or let the middleware do it for you. The middleware will wait for your app to be connected before making the requests and dispatching your actions and pass the current db instance to your action methods. All the communication with your Baqend instance is made within your defined redux actions.
 
@@ -43,7 +43,7 @@ return {
   }
 }
 ```
-For more detailed information take a look on the provided example actions or in the [redux-baqend-middleware](http://github.com) repository.
+For more detailed information take a look on the provided example actions or in the [redux-baqend-middleware](https://github.com/Baqend/redux-baqend) repository.
 
 
 ## How Baqend fits your Backend requirements

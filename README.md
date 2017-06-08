@@ -1,6 +1,6 @@
 !["Logo"](https://github.com/Baqend/react-redux-starter/raw/master/react_baqend.png)
 
-#React, Redux and Baqend Starter
+# React, Redux and Baqend Starter
 With this React, Redux and Baqend starter kit you can build **blazingly fast single page applications** in no time. Setup your project by following the simple steps below.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -65,6 +65,6 @@ Baqend's feature set includes:
 * File Storage and Hosting
 * Access Control on Object and Schema Level
 
-#License
+# License
 
 [MIT](https://github.com/Baqend/react-redux-starter/blob/master/LICENSE)

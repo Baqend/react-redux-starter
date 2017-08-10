@@ -6,8 +6,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { db } from 'baqend/lib/baqend'
-import { messagesLoad } from '../../actions/messages'
+// import { db } from 'baqend/realtime'
+import { messagesLoad, messagesStream, messagesEvents } from '../../actions/messages'
 
 class Messages extends Component {
   constructor(props) {
@@ -16,7 +16,10 @@ class Messages extends Component {
   }
 
   componentWillMount() {
-    this.props.actions.messagesLoad({})
+    this.props.actions.messagesLoad({}).then(() => {
+      this.props.actions.messagesStream({})
+      this.props.actions.messagesEvents({})
+    })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,13 +33,13 @@ class Messages extends Component {
     } else {
       this.messages = this.props.messages.list
     }
+    // <img alt={message.name} className='avatar' src={db.File(message.face).url} />
     return (
       <div>
         <div className="messages">
           {this.messages.map(message =>
             <div key={message.id}>
               <h2 className='message-head'>
-                <img alt={message.name} className='avatar' src={db.File(message.face).url} />
                 <Link to={`/messages/${message.id.replace('/db/Message/','')}`}>{message.name}</Link>
               </h2>
               <p>{message.text}</p>
@@ -58,7 +61,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators({ messagesLoad }, dispatch) }
+  return { actions: bindActionCreators({ messagesLoad, messagesStream, messagesEvents }, dispatch) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Messages)

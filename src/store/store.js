@@ -4,7 +4,7 @@ import { createStoreWithBaqend, baqendReducer } from 'redux-baqend'
 import middlewares from '../middleware'
 import reducers from '../reducers'
 
-import { db } from 'baqend/lib/baqend'
+import { db } from 'baqend/realtime'
 
 export default (initialState = {}) => {
   const reducer = combineReducers({
@@ -15,7 +15,7 @@ export default (initialState = {}) => {
     ...middlewares
   )
   return createStoreWithBaqend(
-    db.connect('app-starter', true),
+    db.connect('twitter-example', true),
     reducer,
     initialState,
     middleware

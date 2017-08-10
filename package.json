@@ -3,19 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "baqend": "^2.7.1",
+    "baqend": "^2.8.2",
     "prop-types": "^15.5.9",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-redux": "^5.0.4",
-    "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2",
     "redux-baqend": "^1.0.4",
-    "redux-logger": "^3.0.1"
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "^1.0.11"
   },
   "scripts": {
     "start": "react-scripts start",

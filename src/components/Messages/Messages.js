@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { db } from 'baqend/lib/baqend'
+import { db } from 'baqend'
 import { messagesLoad } from '../../actions/messages'
 
 class Messages extends Component {
